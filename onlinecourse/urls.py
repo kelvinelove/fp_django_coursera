@@ -15,9 +15,9 @@ urlpatterns = [
     # ex: /onlinecourse/5/
     path('<int:pk>/', views.CourseDetailView.as_view(), name='course_details'),
     # ex: /enroll/5/
-    path('<int:course_id>/enroll/', views.enroll, name='enroll'),
+    path('<int:pk>/enroll/', views.enroll, name='enroll'),
     # ex: /submit/5/
-    path('<int:course_id>/submit/', views.submit, name='submit'),
+    path('<int:pk>/submit/', views.submit, name='submit'),
     # ex: /course/5/submission/1/result/
     path('course/<int:course_id>/submission/<int:submission_id>/result/', views.show_exam_result, name='exam_result'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
